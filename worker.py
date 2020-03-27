@@ -63,7 +63,6 @@ def do_job(task) -> list:
     index = task[0]
     row = task[1]
     part = vector_x_vector(row, VECTOR)
-    print(part)
     answer = (index, part)
     return answer
 
@@ -76,11 +75,11 @@ with Pool(PROCESS_COUNT) as pool:
         end = job[1]
         done = pool.map(do_job, zip(range(begin, end), job[2] ))
         for each in done:
-            print(f"Done = {each[1]}")
+            print(f"Done = {each[0]}")
             RESULT_QUEUE.put(each)
         JOB_QUEUE.task_done()
 
 size = JOB_QUEUE.qsize()
-print(f"Queue size before exit = {size}")
-print(f"Is Queue empty = {JOB_QUEUE.empty()}")
+# print(f"Queue size before exit = {size}")
+# print(f"Is Queue empty = {JOB_QUEUE.empty()}")
 print("I've played my part")

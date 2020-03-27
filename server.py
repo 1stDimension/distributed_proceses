@@ -12,7 +12,7 @@ parser.add_argument(
     "--port",
     type=int,
     help=f"Port number server will bind to. Default is {DEFAULT_PORT}.",
-    default=DEFAULT_PORT,
+    default=DEFAULT_PORT
 )
 parser.add_argument(
     "password",

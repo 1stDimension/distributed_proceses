@@ -112,8 +112,7 @@ while not result_queue.empty():
   partial_result = result_queue.get()
   index = partial_result[0]
   entry = partial_result[1]
-  print(entry)
   answer[index] = entry
 
 print("Resulting vector is:")
-# print(answer)
+print(answer)
